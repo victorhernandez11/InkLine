@@ -68,17 +68,8 @@ function buildChartData(
 
 function computeNiceMax(rawMax: number): number {
   if (rawMax <= 0) return 100;
-  const padded = rawMax * 1.15;
-  const magnitude = Math.pow(10, Math.floor(Math.log10(padded)));
-  const fraction = padded / magnitude;
-  let nice;
-  if (fraction <= 1) nice = 1;
-  else if (fraction <= 2) nice = 2;
-  else if (fraction <= 2.5) nice = 2.5;
-  else if (fraction <= 5) nice = 5;
-  else if (fraction <= 7.5) nice = 7.5;
-  else nice = 10;
-  return nice * magnitude;
+  // Give the tallest bar ~4% headroom, no additional rounding up to a "nice" number
+  return Math.ceil(rawMax * 1.04);
 }
 
 function CustomTooltip({ active, payload, label, chartData, projects }: any) {
