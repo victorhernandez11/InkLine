@@ -309,7 +309,7 @@ export default function App() {
                   if (!text) return;
                   if (bugOpen) {
                     const reports = JSON.parse(localStorage.getItem('inkline_bugs') || '[]');
-                    reports.push({ description: text, timestamp: new Date().toISOString(), userAgent: navigator.userAgent });
+                    reports.push({ description: text, timestamp: new Date().toISOString() });
                     localStorage.setItem('inkline_bugs', JSON.stringify(reports));
                     setBugText(''); setBugOpen(false);
                   } else {
