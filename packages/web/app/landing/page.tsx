@@ -193,8 +193,8 @@ export default function LandingPage() {
           100% { background-position:  200% center; }
         }
         @keyframes momentumGlow {
-          0%, 100% { filter: drop-shadow(0 0 2px rgba(212,98,26,0.0)); }
-          50%      { filter: drop-shadow(0 0 12px rgba(212,98,26,0.55)) drop-shadow(0 0 28px rgba(255,144,84,0.2)); }
+          0%, 100% { text-shadow: 0 0 0px rgba(212,98,26,0); }
+          50%      { text-shadow: 0 0 24px rgba(212,98,26,0.6), 0 0 48px rgba(212,98,26,0.2); }
         }
       `}</style>
 
