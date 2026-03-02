@@ -192,6 +192,10 @@ export default function LandingPage() {
           0%   { background-position: -200% center; }
           100% { background-position:  200% center; }
         }
+        @keyframes momentumGlow {
+          0%, 100% { filter: drop-shadow(0 0 2px rgba(212,98,26,0.0)); }
+          50%      { filter: drop-shadow(0 0 12px rgba(212,98,26,0.55)) drop-shadow(0 0 28px rgba(255,144,84,0.2)); }
+        }
       `}</style>
 
       {/* ── SCROLL PROGRESS BAR ── */}
@@ -252,7 +256,7 @@ export default function LandingPage() {
           }}>
             Turn every word<br />
             <span style={{ background: 'linear-gradient(90deg, #ff9054 0%, #d4621a 30%, #ff6b35 60%, #ff9054 100%)', backgroundSize: '200% 100%', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontStyle: 'italic', animation: heroReady ? 'gradientFlow 5s ease-in-out infinite' : 'none' }}>
-              into momentum.
+              into <span style={{ animation: heroReady ? 'momentumGlow 4s ease-in-out 1.5s infinite' : 'none', display: 'inline' }}>momentum.</span>
             </span>
           </h1>
 
